@@ -3,16 +3,21 @@ package org.example.expert.domain.comment.dto.response;
 import lombok.Getter;
 import org.example.expert.domain.user.dto.response.UserResponse;
 
+import java.time.LocalDateTime;
+
 @Getter
 public class CommentResponse {
 
     private final Long id;
     private final String contents;
-    private final UserResponse user;
+    private String nickname;
+    private LocalDateTime createdAt;
 
-    public CommentResponse(Long id, String contents, UserResponse user) {
+    public CommentResponse(Long id, String contents, String nickname, LocalDateTime createdAt) {
         this.id = id;
         this.contents = contents;
-        this.user = user;
+        this.nickname = nickname;
+        this.createdAt = createdAt;
     }
+
 }
